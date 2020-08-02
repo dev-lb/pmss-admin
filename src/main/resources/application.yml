@@ -1,0 +1,16 @@
+server:
+  port: 59091
+  servlet:
+    context-path: /pmss-admin
+
+spring:
+  application:
+    name: pmss-admin
+
+ds:
+  users[0]:
+    userName: admin
+    password: admin
+  users[1]:
+    userName: root
+    password: root
