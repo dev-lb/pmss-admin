@@ -23,8 +23,9 @@ public class LoginController {
         boolean suc = loginService.login(username, password);
         if (suc) {
             //设置token
-            Cookie token = new Cookie("token", UUID.randomUUID().toString());
-            response.addCookie(token);
+            Cookie cookie = new Cookie("token", UUID.randomUUID().toString());
+            cookie.setPath("/");
+            response.addCookie(cookie);
             //redis保存token
 
             //重定向
