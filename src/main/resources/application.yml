@@ -9,8 +9,8 @@ spring:
 
 ds:
   users[0]:
-    userName: admin
+    username: admin
     password: admin
   users[1]:
-    userName: root
+    username: root
     password: root

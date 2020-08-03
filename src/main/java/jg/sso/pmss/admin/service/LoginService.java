@@ -13,11 +13,11 @@ public class LoginService {
     @Autowired
     private DsConfig dsConfig;
 
-    public boolean login(String userName, String password) {
+    public boolean login(String username, String password) {
         boolean suc = false;
         List<User> users = dsConfig.getUsers();
         for (User user :users){
-            if (user.getUserName().equals(userName) && user.getPassword().equals(password)){
+            if (user.getUsername().equals(username) && user.getPassword().equals(password)){
                 suc = true;
                 break;
             }

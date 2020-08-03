@@ -5,7 +5,7 @@ import com.alibaba.fastjson.JSONObject;
 import jg.sso.pmss.admin.service.LoginService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletResponse;
@@ -18,9 +18,9 @@ public class LoginController {
     @Autowired
     private LoginService loginService;
 
-    @PostMapping(value = "/login")
-    public void login(String userName, String password, String redirectUrl, HttpServletResponse response) throws IOException {
-        boolean suc = loginService.login(userName, password);
+    @RequestMapping(value = "/login")
+    public void login(String username, String password, String redirectUrl, HttpServletResponse response) throws IOException {
+        boolean suc = loginService.login(username, password);
         if (suc) {
             //设置token
             Cookie token = new Cookie("token", UUID.randomUUID().toString());
